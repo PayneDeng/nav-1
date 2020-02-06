@@ -172,14 +172,21 @@ window.onbeforeunload = function () {
   localStorage.setItem('x', string);
 };
 
-$(document).on('keypress', function (e) {
-  var key = e.key; // 等于 const key = e.key 变量名和属性名一样可用前者
+var userPress = function userPress() {
+  $(document).on('keypress', function (e) {
+    var key = e.key; // 等于 const key = e.key 变量名和属性名一样可用前者
 
-  for (var i = 0; i < hashMap.length; i++) {
-    if (hashMap[i].logo.toLowerCase() === key) {
-      window.open(hashMap[i].url);
+    for (var i = 0; i < hashMap.length; i++) {
+      if (hashMap[i].logo.toLowerCase() === key) {
+        window.open(hashMap[i].url);
+      }
     }
-  }
-});
+  });
+}; //const inputEvent = () => {
+// if ($('#inputX').bind('input')) return
+
+
+userPress(); //}
+//inputEvent()
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.375a496c.js.map
+//# sourceMappingURL=main.4ad0d889.js.map

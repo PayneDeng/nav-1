@@ -59,11 +59,20 @@ window.onbeforeunload = () => {
   localStorage.setItem('x', string)
 }
 
-$(document).on('keypress', e => {
-  const { key } = e // 等于 const key = e.key 变量名和属性名一样可用前者
-  for (let i = 0; i < hashMap.length; i++) {
-    if (hashMap[i].logo.toLowerCase() === key) {
-      window.open(hashMap[i].url)
+const userPress = () => {
+  $(document).on('keypress', e => {
+    const { key } = e // 等于 const key = e.key 变量名和属性名一样可用前者
+    for (let i = 0; i < hashMap.length; i++) {
+      if (hashMap[i].logo.toLowerCase() === key) {
+        window.open(hashMap[i].url)
+      }
     }
-  }
-})
+  })
+}
+
+//const inputEvent = () => {
+// if ($('#inputX').bind('input')) return
+userPress()
+//}
+
+//inputEvent()
